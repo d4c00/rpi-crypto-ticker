@@ -10,8 +10,7 @@ rm /tmp/rpi-crypto-ticker.zip
 
 ```bash
 mkdir -p ~/.config/systemd/user/
-cd ~/rpi-crypto-ticker
-cp rpi-crypto-ticker.service ~/.config/systemd/user/
+cp ~/rpi-crypto-ticker/rpi-crypto-ticker.service ~/.config/systemd/user/
 systemctl --user daemon-reload
 systemctl --user enable rpi-crypto-ticker
 systemctl --user restart rpi-crypto-ticker
