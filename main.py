@@ -24,7 +24,7 @@ def systemd_notify(msg):
 
 disp = ST7789.ST7789()
 disp.Init()
-disp.SPI.max_speed_hz = 12000000 
+disp.SPI.max_speed_hz = 1000000 
 disp.GPIO_BL_PIN.frequency = 1024 
 disp.bl_DutyCycle(3) 
 
