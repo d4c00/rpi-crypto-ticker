@@ -3,9 +3,7 @@ Hardware Documentation: https://www.waveshare.net/wiki/1.3inch_LCD_HAT
 
 ```bash
 mkdir -p ~/rpi-crypto-ticker
-curl -L https://github.com/d4c00/rpi-crypto-ticker/archive/refs/heads/main.zip -o /tmp/rpi-crypto-ticker.zip
-unzip /tmp/rpi-crypto-ticker.zip -d ~/rpi-crypto-ticker
-rm /tmp/rpi-crypto-ticker.zip
+curl -L https://github.com/d4c00/rpi-crypto-ticker/archive/refs/heads/main.tar.gz | tar -xz -C ~/rpi-crypto-ticker --strip-components=1
 ```
 
 ```bash
