@@ -1,11 +1,13 @@
 Real-time cryptocurrency price display on Waveshare 1.3inch LCD HAT via Binance API for Raspberry Pi.<br>
 Hardware Documentation: https://www.waveshare.net/wiki/1.3inch_LCD_HAT
+<br>
 
+Download the code:
 ```bash
 mkdir -p ~/rpi-crypto-ticker
 curl -L https://github.com/d4c00/rpi-crypto-ticker/archive/refs/heads/main.tar.gz | tar -xz -C ~/rpi-crypto-ticker --strip-components=1
 ```
-
+Configure and run:
 ```bash
 mkdir -p ~/.config/systemd/user/
 cp ~/rpi-crypto-ticker/rpi-crypto-ticker.service ~/.config/systemd/user/
