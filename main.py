@@ -25,8 +25,8 @@ def systemd_notify(msg):
 disp = ST7789.ST7789()
 disp.Init()
 disp.SPI.max_speed_hz = 12000000 
-disp.GPIO_BL_PIN.frequency = 6000 
-disp.bl_DutyCycle(1) 
+disp.GPIO_BL_PIN.frequency = 1024 
+disp.bl_DutyCycle(10) 
 
 FONT_PATH = "Font/Georama-Regular.ttf"
 
@@ -167,7 +167,7 @@ def api_worker():
         except Exception as e:
             print(f"API Error Exception: {str(e)}")
 
-        time.sleep(5) 
+        time.sleep(15) 
 
 threading.Thread(target=api_worker, daemon=True).start()
 
