@@ -2,12 +2,16 @@
 # Licensed under the MIT License.
 
 import os
+import sys
 import time
 import socket
 import requests
 import ST7789
 import threading
+import functools
 from PIL import Image, ImageDraw, ImageFont
+
+print = functools.partial(print, flush=True)
 
 def systemd_notify(msg):
     addr = os.getenv("NOTIFY_SOCKET")
@@ -168,6 +172,8 @@ def api_worker():
 threading.Thread(target=api_worker, daemon=True).start()
 
 try:
+    systemd_notify("READY=1")
+    print("Service started successfully.")
     disp.ShowImage(current_frame)
     while True:
         if frame_updated.wait(timeout=1.0):
