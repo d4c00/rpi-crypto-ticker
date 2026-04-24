@@ -30,7 +30,7 @@ nano ~/rpi-crypto-ticker/main.py
 ```
 To adjust brightness, locate line 29:
 ```bash
-disp.bl_DutyCycle(1)    # 1% brightness
+disp.bl_DutyCycle(10)    # 10% brightness
 ```
 Locate the PAIRS list around line 33:
 ```nano
