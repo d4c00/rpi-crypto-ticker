@@ -68,7 +68,6 @@ def format_prices(price_dict):
                     idx = 0
                     while idx < len(decimal_part) and decimal_part[idx] == '0':
                         idx += 1
-
                     precision = idx + 3
                     formatted[symbol] = f"{p_float:.{precision}f}"
     return formatted
@@ -103,12 +102,13 @@ def api_worker():
     price_max_H = row_H - name_font_size - 6
     
     bg_template = Image.new("RGB", (SCREEN_W, SCREEN_H), (0, 0, 0))
-    temp_draw = ImageDraw.Draw(bg_template)
         
     while True:
         try:
             r = requests.get(url, timeout=4.0)
+            
             if r.status_code == 200:
+                print(f"API Response: {r.status_code} OK. Processing data...")
                 data = r.json()
                 temp = {item['symbol']: item['price'] for item in data}
                 
@@ -137,14 +137,12 @@ def api_worker():
                         test_size += 1
                     
                     price_font = get_font(best_price_size)
-
                     internal_spacing = -max(2, int(best_price_size * 0.1))
 
                     for i, (symbol, display_name, icon_name) in enumerate(PAIRS):
                         if symbol not in f_prices: continue
                         
                         y_row_top = base_y + i * row_H
-
                         content_total_H = name_font_size + best_price_size + internal_spacing
                         v_padding = max(0, (row_H - content_total_H) // 2)
 
@@ -164,16 +162,22 @@ def api_worker():
                     with frame_lock:
                         current_frame = ready_to_push
                     frame_updated.set() 
-                
+
                 systemd_notify("WATCHDOG=1")
+                print("Watchdog petted successfully.")
+            else:
+                print(f"API Warning: Received status code {r.status_code}. Watchdog NOT petted.")
+
         except Exception as e:
-            print(f"API Error: {e}")
+            print(f"API Request Exception: {str(e)}")
+
         time.sleep(5) 
 
 threading.Thread(target=api_worker, daemon=True).start()
 
 try:
     systemd_notify("READY=1")
+    print("Service Ready signal sent.")
     disp.ShowImage(current_frame)
     while True:
         if frame_updated.wait(timeout=1.0):
@@ -181,4 +185,5 @@ try:
                 disp.ShowImage(current_frame)
             frame_updated.clear() 
 except KeyboardInterrupt:
+    print("Process terminated by user.")
     disp.module_exit()
