@@ -1,4 +1,4 @@
-Real-time cryptocurrency price display on Waveshare 1.3inch LCD HAT via Binance API for Raspberry Pi.
+Real-time cryptocurrency price display on Waveshare 1.3inch LCD HAT via Binance API for Raspberry Pi.<br>
 Hardware Documentation: https://www.waveshare.net/wiki/1.3inch_LCD_HAT
 
 ```bash
@@ -29,14 +29,10 @@ PAIRS = [
     ("ETHBTC",  "ETH/BTC",  "ethbtc"), 
 ]
 ```
-Modify trading pairs:
-Each row represents one pair: ("API_Symbol", "Display_Name", "Icon_Name").
+Modify trading pairs:<br>
+Each row represents one pair: ("API_Symbol", "Display_Name", "Icon_Name").<br>
 "Icon_Name" Example: "btc" will automatically load img/btc.png.
 
 <br>
 
-###### License & Credits
-###### Main Code: © 2026 length <me@length.cc> (https://github.com/d4c00) Licensed under MIT.
-###### Drivers (config.py, ST7789.py): By Waveshare. Licensed under MIT.
-###### Font (Georama-Regular.ttf): Designed by Production Type. Licensed under SIL Open Font License 1.1.
-###### Icons (img/*.png): Licensed under CC0 (Public Domain).
+###### License & Credits<br>Main Code: © 2026 length <me@length.cc> (https://github.com/d4c00) Licensed under MIT.<br>Drivers (config.py, ST7789.py): By Waveshare. Licensed under MIT.<br>Font (Georama-Regular.ttf): Designed by Production Type. Licensed under SIL Open Font License 1.1.<br>Icons (img/*.png): Licensed under CC0 (Public Domain).
