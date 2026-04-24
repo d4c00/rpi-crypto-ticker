@@ -1,6 +1,8 @@
 Real-time cryptocurrency price display on Waveshare 1.3inch LCD HAT via Binance API for Raspberry Pi.<br>
-Hardware Documentation: https://www.waveshare.net/wiki/1.3inch_LCD_HAT
-<br>
+Hardware Documentation: https://www.waveshare.net/wiki/1.3inch_LCD_HAT<br>
+<div align="left">
+  <img src="https://github.com/user-attachments/assets/ca1dc8fd-6ccd-40ed-bb53-e11916c7a919" width="80%" />
+</div>
 
 Download the code:
 ```bash
