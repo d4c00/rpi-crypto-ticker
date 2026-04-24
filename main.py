@@ -107,7 +107,7 @@ def api_worker():
         
     while True:
         try:
-            r = requests.get(url, timeout=4.0)
+            r = requests.get(url, timeout=14.0)
             
             if r.status_code == 200:
                 print(f"API Success: Status 200. Updating display and petting watchdog.")
