@@ -24,11 +24,15 @@ systemctl --user enable rpi-crypto-ticker
 systemctl --user restart rpi-crypto-ticker
 ```
 
-To modify the displayed trading pairs and prices:
+To modify the brightness or the list of trading pairs:
 ```bash
 nano ~/rpi-crypto-ticker/main.py
 ```
-Locate the PAIRS list around line 29:
+To adjust brightness, locate line 29:
+```bash
+disp.bl_DutyCycle(1)    # 1% brightness
+```
+Locate the PAIRS list around line 33:
 ```nano
 PAIRS = [
     ("BTCUSDT", "BTC/USDT", "btc"),
