@@ -4,6 +4,12 @@ Hardware Documentation: https://www.waveshare.net/wiki/1.3inch_LCD_HAT<br>
   <img src="https://github.com/user-attachments/assets/ca1dc8fd-6ccd-40ed-bb53-e11916c7a919" width="80%" />
 </div>
 
+Install dependencies:
+```bash
+sudo apt update
+sudo apt install -y python3-requests python3-pil python3-spidev python3-numpy python3-gpiozero python3-rpi.gpio
+```
+
 Download the code:
 ```bash
 mkdir -p ~/rpi-crypto-ticker
