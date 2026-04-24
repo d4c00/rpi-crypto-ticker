@@ -32,6 +32,11 @@ Modify trading pairs:<br>
 Each row represents one pair: ("API_Symbol", "Display_Name", "Icon_Name").<br>
 "Icon_Name" Example: "btc" will automatically load img/btc.png.
 
+To monitor logs:
+```bash
+sudo journalctl _SYSTEMD_USER_UNIT=rpi-crypto-ticker.service -f
+```
+
 <br>
 
 ###### License & Credits<br>Main Code: © 2026 length <me@length.cc> (https://github.com/d4c00) Licensed under MIT.<br>Drivers (config.py, ST7789.py): By Waveshare. Licensed under MIT.<br>Font (Georama-Regular.ttf): Designed by Production Type. Licensed under SIL Open Font License 1.1.<br>Icons (img/*.png): Licensed under CC0 (Public Domain).
