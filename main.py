@@ -26,7 +26,7 @@ disp = ST7789.ST7789()
 disp.Init()
 disp.SPI.max_speed_hz = 12000000 
 disp.GPIO_BL_PIN.frequency = 1024 
-disp.bl_DutyCycle(10) 
+disp.bl_DutyCycle(3) 
 
 FONT_PATH = "Font/Georama-Regular.ttf"
 
