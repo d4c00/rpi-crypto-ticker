@@ -176,7 +176,7 @@ try:
     print("Service started successfully.")
     disp.ShowImage(current_frame)
     while True:
-        if frame_updated.wait(timeout=1.0):
+        if frame_updated.wait(timeout=5.0):
             with frame_lock:
                 disp.ShowImage(current_frame)
             frame_updated.clear() 
