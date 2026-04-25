@@ -163,8 +163,9 @@ def api_worker():
                 systemd_notify("WATCHDOG=1")
                 with open("/sys/class/leds/ACT/brightness", "w") as f:
                     f.write("1")
-                time.sleep(0.01)
-                with open("/sys/class/leds/ACT/brightness", "w") as f:
+                    f.flush()
+                    time.sleep(0.0001)
+                    f.seek(0)
                     f.write("0")
             else:
                 print(f"API Warning: Received status code {r.status_code}. Watchdog skipped.")
