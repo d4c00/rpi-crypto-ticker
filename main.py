@@ -24,7 +24,7 @@ def systemd_notify(msg):
 
 disp = ST7789.ST7789()
 disp.Init()
-disp.SPI.max_speed_hz = 1000000 
+disp.SPI.max_speed_hz = 8000000 
 disp.GPIO_BL_PIN.frequency = 1024 
 disp.bl_DutyCycle(3) 
 
@@ -107,7 +107,7 @@ def api_worker():
         
     while True:
         try:
-            r = requests.get(url, timeout=14.0)
+            r = requests.get(url, timeout=4.0)
             
             if r.status_code == 200:
                 print(f"API Success: Status 200. Updating display and petting watchdog.")
@@ -167,7 +167,7 @@ def api_worker():
         except Exception as e:
             print(f"API Error Exception: {str(e)}")
 
-        time.sleep(15) 
+        time.sleep(5) 
 
 threading.Thread(target=api_worker, daemon=True).start()
 
