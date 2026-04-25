@@ -10,13 +10,10 @@ sudo apt update
 sudo apt install -y python3-requests python3-pil python3-spidev python3-numpy python3-gpiozero python3-rpi.gpio
 ```
 
-Download the code:
+Download the code & Configure and run:
 ```bash
 mkdir -p ~/rpi-crypto-ticker
 curl -L https://github.com/d4c00/rpi-crypto-ticker/archive/refs/heads/main.tar.gz | tar -xz -C ~/rpi-crypto-ticker --strip-components=1
-```
-Configure and run:
-```bash
 mkdir -p ~/.config/systemd/user/
 cp ~/rpi-crypto-ticker/rpi-crypto-ticker.service ~/.config/systemd/user/
 systemctl --user daemon-reload
