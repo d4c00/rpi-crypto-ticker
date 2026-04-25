@@ -45,6 +45,11 @@ To monitor logs:
 ```bash
 sudo journalctl _SYSTEMD_USER_UNIT=rpi-crypto-ticker.service -f
 ```
+Disable auto-start at boot and stop the running service:
+```bash
+systemctl --user disable rpi-crypto-ticker
+systemctl --user stop rpi-crypto-ticker
+```
 
 <br>
 
