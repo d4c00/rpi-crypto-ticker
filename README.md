@@ -38,8 +38,8 @@ PAIRS = [
 ]
 ```
 Modify trading pairs:<br>
-Each row represents one pair: ("API_Symbol", "Display_Name", "Icon_Name").<br>
-"Icon_Name" Example: "btc" will automatically load img/btc.png.
+Each row represents one pair: (`API_Symbol`, `Display_Name`, `Icon_Name`).<br>
+`Icon_Name` Example: `btc` will automatically load `img/btc.png`.
 
 To monitor logs:
 ```bash
