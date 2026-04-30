@@ -1,7 +1,7 @@
 Real-time cryptocurrency price display on Waveshare 1.3inch LCD HAT via Binance API for Raspberry Pi.<br>
 Hardware Documentation: https://www.waveshare.net/wiki/1.3inch_LCD_HAT<br>
 <div align="left">
-  <img src="./assets/2026_04_28.jpg" width="80%" />
+  <img src="https://assets.length.cc/media/2026_04_28.jpg" width="80%" />
 </div>
 
 Install dependencies:
@@ -12,13 +12,13 @@ sudo apt install -y python3-requests python3-pil python3-spidev python3-numpy py
 
 Download the code & Configure and run:
 ```bash
-mkdir -p ~/rpi-crypto-ticker
-curl -L https://github.com/d4c00/rpi-crypto-ticker/archive/refs/heads/main.tar.gz | tar -xz -C ~/rpi-crypto-ticker --strip-components=1
+mkdir -p ~/rpi-crypto-ticker/{img,font} ~/.config/systemd/user/
+curl -L https://code.length.cc/rpi-crypto-ticker.tar.gz | tar -xz -C ~/rpi-crypto-ticker --strip-components=1
 
-curl -L https://github.com/d4c00/rpi-crypto-ticker/raw/main/img/btc.png -o ~/rpi-crypto-ticker/img/btc.png
-curl -L https://github.com/d4c00/rpi-crypto-ticker/raw/main/img/eth.png -o ~/rpi-crypto-ticker/img/eth.png
-curl -L https://github.com/d4c00/rpi-crypto-ticker/raw/main/img/ethbtc.png -o ~/rpi-crypto-ticker/img/ethbtc.png
-curl -L https://github.com/d4c00/rpi-crypto-ticker/raw/main/font/RedHatMono-Regular.ttf -o ~/rpi-crypto-ticker/font/RedHatMono-Regular.ttf
+curl -L https://assets.length.cc/media/btc.png -o ~/rpi-crypto-ticker/img/btc.png
+curl -L https://assets.length.cc/media/eth.png -o ~/rpi-crypto-ticker/img/eth.png
+curl -L https://assets.length.cc/media/ethbtc.png -o ~/rpi-crypto-ticker/img/ethbtc.png
+curl -L https://assets.length.cc/fonts/RedHatMono-Regular.ttf -o ~/rpi-crypto-ticker/font/RedHatMono-Regular.ttf
 
 mkdir -p ~/.config/systemd/user/
 cp ~/rpi-crypto-ticker/rpi-crypto-ticker.service ~/.config/systemd/user/
@@ -59,5 +59,7 @@ systemctl --user stop rpi-crypto-ticker
 ```
 
 <br>
+
+###### Last Updated: 2026-04-30
 
 ###### License & Credits<br>Main Code: © 2026 length <me@length.cc> (https://github.com/d4c00) Licensed under MIT.<br>Drivers (config.py, ST7789.py): By Waveshare. Licensed under MIT.<br>Font (RedHatMono-Regular.ttf): Designed by MCKL. Licensed under SIL Open Font License 1.1.<br>Icons (img/*.png): Licensed under CC0 (Public Domain).
