@@ -1,3 +1,5 @@
+### The development has moved to Codeberg / 开发已迁移至 Codeberg:<br>https://codeberg.org/length/rpi-crypto-ticker
+
 Real-time cryptocurrency price display on Waveshare 1.3inch LCD HAT via Binance API for Raspberry Pi.<br>
 Hardware Documentation: https://www.waveshare.net/wiki/1.3inch_LCD_HAT<br>
 <div align="left">
